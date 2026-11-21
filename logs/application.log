@@ -1,0 +1,104 @@
+Nov 20, 2026 6:45:41 PM com.college.util.AppLogger info
+INFO: Failed login attempt for username: college_app
+Nov 20, 2026 6:46:15 PM com.college.util.AppLogger info
+INFO: Successful login: admin
+Nov 20, 2026 6:53:57 PM com.college.util.AppLogger info
+INFO: Successful login: admin
+Nov 21, 2026 12:17:07 PM com.college.util.AppLogger info
+INFO: Successful login: admin
+Nov 21, 2026 12:17:30 PM com.college.util.AppLogger error
+SEVERE: Student management error
+com.college.exception.DatabaseException: Failed to add student
+	at com.college.dao.StudentDAO.addStudent(StudentDAO.java:34)
+	at com.college.service.StudentService.addStudent(StudentService.java:34)
+	at com.college.controller.StudentController.addStudent(StudentController.java:17)
+	at com.college.Main.studentManagementMenu(Main.java:262)
+	at com.college.Main.adminDashboard(Main.java:157)
+	at com.college.Main.main(Main.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:478)
+	at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod(ExecJavaMojo.java:142)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:453)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`student_management`.`students`, CONSTRAINT `students_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1101)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1448)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1084)
+	at com.college.dao.StudentDAO.addStudent(StudentDAO.java:31)
+	... 12 more
+
+Nov 21, 2026 12:21:27 PM com.college.util.AppLogger info
+INFO: Successful login: admin
+Nov 21, 2026 12:22:01 PM com.college.util.AppLogger error
+SEVERE: Student management operation failed
+java.lang.IllegalArgumentException: Password must contain at least 6 characters
+	at com.college.service.StudentService.registerStudent(StudentService.java:28)
+	at com.college.controller.StudentController.registerStudent(StudentController.java:26)
+	at com.college.Main.studentManagementMenu(Main.java:272)
+	at com.college.Main.adminDashboard(Main.java:157)
+	at com.college.Main.main(Main.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:478)
+	at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod(ExecJavaMojo.java:142)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:453)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+
+Nov 21, 2026 12:28:39 PM com.college.util.AppLogger info
+INFO: Failed login attempt for username: aw0893
+Nov 21, 2026 12:28:49 PM com.college.util.AppLogger info
+INFO: Successful login: admin
+Nov 21, 2026 12:29:12 PM com.college.util.AppLogger error
+SEVERE: Student management operation failed
+java.lang.IllegalArgumentException: Password must contain at least 6 characters
+	at com.college.service.StudentService.registerStudent(StudentService.java:30)
+	at com.college.controller.StudentController.registerStudent(StudentController.java:28)
+	at com.college.Main.studentManagementMenu(Main.java:272)
+	at com.college.Main.adminDashboard(Main.java:157)
+	at com.college.Main.main(Main.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:478)
+	at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod(ExecJavaMojo.java:142)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:453)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+
+Nov 21, 2026 12:30:42 PM com.college.util.AppLogger error
+SEVERE: Student management operation failed
+com.college.exception.DatabaseException: Student registration failed: Duplicate entry 'aw0893' for key 'users.username'
+	at com.college.dao.StudentDAO.registerStudent(StudentDAO.java:105)
+	at com.college.service.StudentService.registerStudent(StudentService.java:53)
+	at com.college.controller.StudentController.registerStudent(StudentController.java:28)
+	at com.college.Main.studentManagementMenu(Main.java:272)
+	at com.college.Main.adminDashboard(Main.java:157)
+	at com.college.Main.main(Main.java:64)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:478)
+	at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod(ExecJavaMojo.java:142)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:453)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:317)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'aw0893' for key 'users.username'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1101)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1448)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1084)
+	at com.college.dao.StudentDAO.registerStudent(StudentDAO.java:60)
+	... 12 more
+
+Nov 21, 2026 12:34:35 PM com.college.util.AppLogger info
+INFO: Successful login: admin
+Nov 21, 2026 12:42:00 PM com.college.util.AppLogger info
+INFO: Successful login: admin
